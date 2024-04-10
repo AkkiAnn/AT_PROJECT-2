@@ -8,10 +8,12 @@ class Login:
         super().__init__()
         self.driver = driver
 
+    # Locators of Login Page.
     l_username_n = 'username'
     l_password_n = 'password'
     login_btn_x = '//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button'
 
+    # Login function to enter the Web page.
     def log_in(self, username, password):
 
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(By.NAME, self.l_username_n)).send_keys(username)
